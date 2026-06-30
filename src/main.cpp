@@ -70,6 +70,19 @@ $on_mod(Loaded) {
 
 };
 
+CCAction* easeActionFromString(CCActionInterval* uneased, std::string easing, std::string easingType);
+
+// There is a visual issue where running the Back easing with InOut/In shows the popup at negative scale for a second
+// This function reverts any Back easing with InOut/In as it's easing type to just use the  Out easingType
+CCAction* scaleEaseActionFromString(CCActionInterval* uneased, std::string easing, std::string easingType) {
+	if (easing == "Back") {
+		if (easingType == "In" || easingType == "In Out") {
+			return CCEaseBackOut::create(uneased);
+		}
+	}
+	return easeActionFromString(uneased, easing, easingType);
+}
+
 CCAction* easeActionFromString(CCActionInterval* uneased, std::string easing, std::string easingType) {
 	if (easingType == "In") {
 		if (easing == "Back") {
@@ -96,7 +109,7 @@ CCAction* easeActionFromString(CCActionInterval* uneased, std::string easing, st
 			return CCEaseBackOut::create(uneased);
 		}
 		if (easing == "Elastic") {
-			return CCEaseElasticOut::create(uneased);
+			return CCEaseElasticOut::create(uneased, 0.60000002f);
 		}
 		if (easing == "Ease") {
 			return CCEaseOut::create(uneased, 2.0f);
@@ -162,7 +175,7 @@ class $modify(FLAlertLayer) {
 			auto skewAction = CCSkewTo::create(setting_skew_time, 0.0, 0.0);
 			auto scaleAction = CCScaleTo::create(setting_scale_time, 1.0);
 			
-			auto easedScaleAction = easeActionFromString(scaleAction, setting_scale_easing, setting_scale_easing_type);
+			auto easedScaleAction = scaleEaseActionFromString(scaleAction, setting_scale_easing, setting_scale_easing_type);
 			auto easedSkewAction = easeActionFromString(skewAction, setting_skew_easing, setting_rotation_easing_type);
 			auto easedRotationAction = easeActionFromString(rotateAction, setting_rotation_easing, setting_rotation_easing_type);
 

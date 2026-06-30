@@ -38,7 +38,7 @@
 			"description": "Popups will."
 		},
 		"rotation-time": {
-			"name": "Rotation Speed",
+			"name": "Rotation Time",
 			"type": "float",
 			"default": 0.5,
 			"control": {
@@ -78,7 +78,7 @@
 			"type": "title"
 		},
 		"scale-time": {
-			"name": "Scale Speed",
+			"name": "Scale Time",
 			"type": "float",
 			"default": 0.5,
 			"control": {
@@ -138,7 +138,7 @@
 			"description": "Popups will skew by y units by the end of the animation."
 		},
 		"skew-time": {
-			"name": "Skew Speed",
+			"name": "Skew Time",
 			"type": "float",
 			"default": 0.3,
 			"control": {
