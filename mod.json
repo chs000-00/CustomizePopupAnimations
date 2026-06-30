@@ -1,0 +1,181 @@
+{
+	"geode": "5.7.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "chs000.customizablepopupanimation",
+	"name": "Customizable Popup Animations",
+	"version": "v1.0.0",
+	"developer": "chs000",
+	"description": "Customize your popup's animation!",
+	"dependencies": {
+		"geode.node-ids": ">=v1.23.3"
+	},
+	"tags": [
+		"customization",
+		"interface",
+		"enhancement",
+		"universal"
+	],
+	"settings": {
+		"settings-rotation": {
+			"name": "Popup Rotation Animation",
+			"type": "title"
+		},
+		"rotation-offset": {
+			"name": "Rotation Amount",
+			"type": "float",
+			"default": -15,
+			"control": {
+				"slider-step": 0.5,
+				"input": true
+			},
+			"min": -180,
+			"max": 180,
+			"description": "Popups will."
+		},
+		"rotation-time": {
+			"name": "Rotation Speed",
+			"type": "float",
+			"default": 0.5,
+			"control": {
+				"slider-step": 0.01,
+				"input": true
+			},
+			"min": 0,
+			"max": 2,
+			"description": "Popups will finish rotating in this many seconds."
+		},
+		"rotation-easing": {
+			"name": "Rotation Easing",
+			"type": "string",
+			"default": "Back",
+			"one-of": [
+				"Back",
+				"Elastic",
+				"Ease",
+				"Exponential",
+				"Sine",
+				"Bounce",
+				"None"
+			]
+		},
+		"rotation-easing-type": {
+			"name": "Rotation Easing",
+			"type": "string",
+			"default": "In Out",
+			"one-of": [
+				"In",
+				"Out",
+				"In Out"
+			]
+		},
+		"settings-scale": {
+			"name": "Popup Scale Animation",
+			"type": "title"
+		},
+		"scale-time": {
+			"name": "Scale Speed",
+			"type": "float",
+			"default": 0.5,
+			"control": {
+				"slider-step": 0.01,
+				"input": true
+			},
+			"min": 0,
+			"max": 2,
+			"description": "Popups will finish scaling in this many seconds."
+		},
+		"scale-easing": {
+			"name": "Scale Easing",
+			"type": "string",
+			"default": "Back",
+			"one-of": [
+				"Back",
+				"Elastic",
+				"Ease",
+				"Exponential",
+				"Sine",
+				"Bounce",
+				"None"
+			]
+		},
+		"scale-easing-type": {
+			"name": "Scale Easing",
+			"type": "string",
+			"default": "Out",
+			"one-of": [
+				"In",
+				"Out",
+				"In Out"
+			]
+		},
+		"settings-skew": {
+			"name": "Popup Skew Animation",
+			"type": "title"
+		},
+		"skew-offset-x": {
+			"name": "Skew Amount X",
+			"type": "float",
+			"default": 15,
+			"control": {
+				"slider-step": 0.5,
+				"input": true
+			},
+			"description": "Popups will skew by x units by the end of the animation."
+		},
+		"skew-offset-y": {
+			"name": "Skew Amount Y",
+			"type": "float",
+			"default": 0,
+			"control": {
+				"slider-step": 0.5,
+				"input": true
+			},
+			"description": "Popups will skew by y units by the end of the animation."
+		},
+		"skew-time": {
+			"name": "Skew Speed",
+			"type": "float",
+			"default": 0.3,
+			"control": {
+				"slider-step": 0.01,
+				"input": true
+			},
+			"min": 0,
+			"max": 2,
+			"description": "Popups will finish skewing in this many seconds."
+		},
+		"skew-easing": {
+			"name": "Skew Easing",
+			"type": "string",
+			"default": "Ease",
+			"one-of": [
+				"Back",
+				"Elastic",
+				"Ease",
+				"Exponential",
+				"Sine",
+				"Bounce",
+				"None"
+			]
+		},
+		"skew-easing-type": {
+			"name": "Skew Easing Type",
+			"type": "string",
+			"default": "In Out",
+			"one-of": [
+				"In",
+				"Out",
+				"In Out"
+			]
+		},
+		"advanced-settings": {
+			"name": "Advanced Settings",
+			"type": "title"
+		}
+	}
+}
