@@ -19,54 +19,60 @@ static float setting_skew_time = Mod::get()->getSettingValue<float>("skew-time")
 static std::string setting_skew_easing = Mod::get()->getSettingValue<std::string>("skew-easing");
 static std::string setting_skew_easing_type = Mod::get()->getSettingValue<std::string>("skew-easing-type");
 
+static bool ignore_elasticity = Mod::get()->getSettingValue<bool>("ignore-elasticity");
+
 $on_mod(Loaded) {
     listenForSettingChanges<float>(
         "rotation-offset",
-        [](float value) { setting_rotation_offset = value;  });
+        [](float value) { setting_rotation_offset = value; });
 
     listenForSettingChanges<float>(
         "rotation-time",
-        [](float value) { setting_rotation_time = value;  });
+        [](float value) { setting_rotation_time = value; });
 
     listenForSettingChanges<std::string>(
         "rotation-easing",
-        [](std::string value) { setting_rotation_easing = value;  });
+        [](std::string value) { setting_rotation_easing = value; });
 
     listenForSettingChanges<std::string>(
         "rotation-easing-type",
-        [](std::string value) { setting_rotation_easing_type = value;  });
+        [](std::string value) { setting_rotation_easing_type = value; });
 
     listenForSettingChanges<float>(
         "scale-time",
-        [](float value) { setting_scale_time = value;  });
+        [](float value) { setting_scale_time = value; });
 
     listenForSettingChanges<std::string>(
         "scale-easing",
-        [](std::string value) { setting_scale_easing = value;  });
+        [](std::string value) { setting_scale_easing = value; });
 
     listenForSettingChanges<std::string>(
         "scale-easing-type",
-        [](std::string value) { setting_scale_easing_type = value;  });
+        [](std::string value) { setting_scale_easing_type = value; });
 
     listenForSettingChanges<float>(
         "skew-offset-x",
-        [](float value) { setting_skew_offset_x = value;  });
+        [](float value) { setting_skew_offset_x = value; });
 
     listenForSettingChanges<float>(
         "skew-offset-y",
-        [](float value) { setting_skew_offset_y = value;  });
+        [](float value) { setting_skew_offset_y = value; });
 
     listenForSettingChanges<float>(
         "skew-time",
-        [](float value) { setting_skew_time = value;  });
+        [](float value) { setting_skew_time = value; });
 
     listenForSettingChanges<std::string>(
         "skew-easing",
-        [](std::string value) { setting_skew_easing = value;  });
+        [](std::string value) { setting_skew_easing = value; });
 
     listenForSettingChanges<std::string>(
         "skew-easing-type",
-        [](std::string value) { setting_skew_easing_type = value;  });
+        [](std::string value) { setting_skew_easing_type = value; });
+
+    listenForSettingChanges<bool>(
+        "ignore-elasticity",
+        [](bool value) { ignore_elasticity = value; });
 
 };
 
@@ -165,7 +171,7 @@ class $modify(FLAlertLayer) {
 
 		this->stopAllActions();
 
-		if (!this->m_noElasticity) {
+		if (!this->m_noElasticity || ignore_elasticity) {
 			this->m_mainLayer->setScale(0);
 			this->m_mainLayer->setSkewX(setting_skew_offset_x);
 			this->m_mainLayer->setSkewY(setting_skew_offset_y);

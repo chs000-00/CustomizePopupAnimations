@@ -54,13 +54,13 @@
 			"type": "string",
 			"default": "Back",
 			"one-of": [
-				"Back",
-				"Elastic",
+				"None",
 				"Ease",
+				"Elastic",
+				"Bounce",
 				"Exponential",
 				"Sine",
-				"Bounce",
-				"None"
+				"Back"
 			]
 		},
 		"rotation-easing-type": {
@@ -92,15 +92,15 @@
 		"scale-easing": {
 			"name": "Scale Easing",
 			"type": "string",
-			"default": "Back",
+			"default": "Elastic",
 			"one-of": [
-				"Back",
-				"Elastic",
+				"None",
 				"Ease",
+				"Elastic",
+				"Bounce",
 				"Exponential",
 				"Sine",
-				"Bounce",
-				"None"
+				"Back"
 			]
 		},
 		"scale-easing-type": {
@@ -130,7 +130,7 @@
 		"skew-offset-y": {
 			"name": "Skew Amount Y",
 			"type": "float",
-			"default": 0,
+			"default": 15,
 			"control": {
 				"slider-step": 0.5,
 				"input": true
@@ -140,7 +140,7 @@
 		"skew-time": {
 			"name": "Skew Time",
 			"type": "float",
-			"default": 0.3,
+			"default": 0.35,
 			"control": {
 				"slider-step": 0.01,
 				"input": true
@@ -154,13 +154,13 @@
 			"type": "string",
 			"default": "Ease",
 			"one-of": [
-				"Back",
-				"Elastic",
+				"None",
 				"Ease",
+				"Elastic",
+				"Bounce",
 				"Exponential",
 				"Sine",
-				"Bounce",
-				"None"
+				"Back"
 			]
 		},
 		"skew-easing-type": {
@@ -176,6 +176,12 @@
 		"advanced-settings": {
 			"name": "Advanced Settings",
 			"type": "title"
+		},
+		"ignore-elasticity": {
+			"name": "Always Animate",
+			"type": "bool",
+			"default": false,
+			"description": "Force the mod to animate every popup, even if it has the popup animation disabled. May break on some popups, or may not."
 		}
 	}
 }
