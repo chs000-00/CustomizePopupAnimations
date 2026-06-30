@@ -35,7 +35,7 @@
 			},
 			"min": -180,
 			"max": 180,
-			"description": "Popups will."
+			"description": "Popups will rotate by this much before settling at their original rotation."
 		},
 		"rotation-time": {
 			"name": "Rotation Time",
@@ -125,7 +125,7 @@
 				"slider-step": 0.5,
 				"input": true
 			},
-			"description": "Popups will skew by x units by the end of the animation."
+			"description": "Popups will skew by x units by the end of the animation before settling at 0 skew."
 		},
 		"skew-offset-y": {
 			"name": "Skew Amount Y",
@@ -135,7 +135,7 @@
 				"slider-step": 0.5,
 				"input": true
 			},
-			"description": "Popups will skew by y units by the end of the animation."
+			"description": "Popups will skew by y units by the end of the animation before settling at 0 skew."
 		},
 		"skew-time": {
 			"name": "Skew Time",
