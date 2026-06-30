@@ -6,8 +6,8 @@
 		"mac": "2.2081",
 		"ios": "2.2081"
 	},
-	"id": "chs000.customizablepopupanimation",
-	"name": "Customizable Popup Animations",
+	"id": "chs000.customizepopupanimation",
+	"name": "Customize Popup Animations",
 	"version": "v1.0.0",
 	"developer": "chs000",
 	"description": "Customize your popup's animation!",
