@@ -8,12 +8,9 @@
 	},
 	"id": "chs000.customizepopupanimation",
 	"name": "Custom Popup Animations",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "chs000",
 	"description": "Customize your popup's animation!",
-	"dependencies": {
-		"geode.node-ids": ">=v1.23.3"
-	},
 	"tags": [
 		"customization",
 		"interface",
