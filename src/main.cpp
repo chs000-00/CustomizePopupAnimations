@@ -164,6 +164,7 @@ class $modify(FLAlertLayer) {
 
 		FLAlertLayer::show();
 
+		// chs000.customizepopupanimation/dont-animate
 		if (this->getUserFlag("dont-animate"_spr)) {
 			return;
 		}
