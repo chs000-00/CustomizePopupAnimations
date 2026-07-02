@@ -164,6 +164,10 @@ class $modify(FLAlertLayer) {
 
 		FLAlertLayer::show();
 
+		if (this->getUserFlag("dont-animate"_spr)) {
+			return;
+		}
+
 		// Fix incompat with chroma-icons
 		if (this->getID() == "naxrin.chroma_icons/chroma-icons-central") {
 			return;
