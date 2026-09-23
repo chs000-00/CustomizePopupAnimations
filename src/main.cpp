@@ -180,8 +180,9 @@ class $modify(FLAlertLayer) {
 		// this->stopAllActions();
 
 		if (!this->m_noElasticity || ignore_elasticity) {
+			this->setOpacity(0.0);
+
 			this->m_mainLayer->setScale(0);
-            this->m_opacity = 0.0;
 			this->m_mainLayer->setSkewX(setting_skew_offset_x);
 			this->m_mainLayer->setSkewY(setting_skew_offset_y);
 			this->m_mainLayer->setRotation(-setting_rotation_offset);
