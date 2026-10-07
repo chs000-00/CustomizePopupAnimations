@@ -1,3 +1,7 @@
+# 1.0.2
+
+- Stopped using StopAllActions()
+
 # 1.0.1
 
 - Added code for compatibility with other mods  
